@@ -7,14 +7,19 @@ services:
     image: aldextecnologystore-docker-img-web:dev-1
     ports:
       - 9000:80
+    environment:
+      - DB_HOST=cont-db-mysql-dev:3306
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_NAME=bd_aldex_tecnology_store
     develop:
       watch:
         - action: sync
           path: ./src
           target: /var/www/html
-    depends_on:
-      cont-db-mysql-dev:
-        condition: service_healthy
+    # depends_on:
+    #   cont-db-mysql-dev:
+    #     condition: service_healthy
     networks:
       - net_dev
   cont-db-mysql-dev:

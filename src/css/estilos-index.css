@@ -1,0 +1,40 @@
+/*Banner*/
+
+.contenedor-banner{
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    max-height: 100%;
+}
+
+.contenedor-banner img{
+    width: 100%;
+}
+
+.banner-contenido{
+    position: absolute;
+    flex-direction: column;
+    padding-left: 60px;
+}
+.banner-boton{
+    background-color: #003DA5;
+    border: none;
+    width: 200px;
+    height: 40px;   
+    margin-top: 20px;
+    color: white;
+    border-radius: 20px;
+}
+.banner-contenido p{
+    color: white;
+    font-family: sans-serif;
+    margin: 0px;
+}
+.banner-contenido-titulo{
+    font-weight: 60px;
+    font-size: 40px;
+}
+.banner-contenido-subtitulo{
+    font-size: 35px;
+}

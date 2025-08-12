@@ -1,0 +1,152 @@
+html,
+body {
+    height: 100%;
+    font-family: system-ui, sans-serif;
+    background-color: #fff;
+    color: #222;
+    /* line-height: 1.5; */
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.oculto {
+    display: none;
+}
+
+.contenedor-contenido {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrito-principal-vacio  {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+}
+
+.carrito-principal-con-productos {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    /* max-width: 800px; */
+}   
+
+.car-btn-registrar-cliente {
+    width: 100%;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #003DA5;
+
+    color: #FFFF;
+    margin-top: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.car-btn-ver-productos {
+    width: 100%;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #bccbe4;
+
+    color: #003DA5;
+    margin-top: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.car-span-texto {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Productos */
+
+.contenedor-grid {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.contenedor-opciones-carrito{
+    display: none;
+    background-color:  rgb(235, 233, 229);
+    position: absolute;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.cart-producto {
+    width: 300px;
+    flex-direction: column;
+}
+
+.cart-producto-cont-img {
+    width: 100%;
+}
+
+.cart-producto-img {
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    max-width: 100%;
+    /* width: 100%; */
+}
+
+.cart-producto-cont-info {
+    /* max-width: 100%; */
+    padding: 4px 8px 8px 8px;
+    flex-direction: column;
+
+}
+
+.cart-producto-cont-precio {
+    /* font-weight: bold; */
+}
+
+.cart-producto-pen {
+    font-size: 20px;
+    font-weight: bold;
+    align-items: end;
+
+    margin-right: 10px;
+}
+
+.cart-producto-precio {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cart-producto-descrip {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* .cart-producto {
+    width: 300px;
+} */

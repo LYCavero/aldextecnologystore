@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  cont-web-dev:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    image: aldextecnologystore-docker-img-web:dev-1
+    ports:
+      - 9000:80
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /var/www/html
+    depends_on:
+      cont-db-mysql-dev:
+        condition: service_healthy
+    networks:
+      - net_dev
+  cont-db-mysql-dev:
+    image: mysql:8.0
+    ports:
+      - "6003:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bd_aldex_tecnology_store
+    volumes:
+      - vol_db_mysql_dev:/var/lib/mysql
+      - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql
+    networks:
+      - net_dev
+
+volumes:
+  vol_db_mysql_dev:
+networks:
+  net_dev:
+    name: aldextecnologystore_net_dev

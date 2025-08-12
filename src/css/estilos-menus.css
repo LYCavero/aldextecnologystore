@@ -1,0 +1,431 @@
+/* 1 Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: system-ui, sans-serif;
+    background-color: #fff;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* 2. Estilos predeterminados */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* 3. Utilidades comunes */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/** Contenedor Principal **/
+#contenedor-principal {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    flex-direction: column;
+}
+
+.espacio-lateral {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+#contenido {
+    flex: 1;
+    margin-top: 20px;
+}
+
+
+
+/* Usuarios */
+
+.btn-agregar-usuario {
+    padding: 5px 10px;
+    background-color: #09DDCC;
+    border-radius: 30px;
+    color: #fff;
+
+    margin: 0 20px 0 0;
+    min-width: 180px;
+}
+
+.btn-agregar-usuario span {
+    font-weight: 600;
+}
+
+
+
+.cont-1 {
+    flex-direction: row;
+}
+
+.cont-search {
+    margin-left: auto;
+}
+
+.h1-titulo {
+    height: 100%;
+    font-size: 40px;
+}
+
+.div-titulo {
+    width: 400px;
+    height: 50px;
+
+    /* background-color: yellow; */
+}
+
+.search-btn {
+    height: 100%;
+    width: 50px;
+    background-color: #09DDCC;
+}
+
+.search {
+    min-width: 300px;
+    padding: 0 0 0 15px;
+    background-color: #D9D9D9;
+
+}
+
+.section {
+    padding: 10px clamp(0px, calc((100vw - 944px) / 2 + 0px), 30px);
+}
+
+/** Tabla Usuarios**/
+
+#tb-usuarios{
+    min-width: 796px;
+}
+
+.tb {
+    width: 100%;
+    /* min-width: 764px; */
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    /* margin: 50px 0 0 0; */
+    /* font-size: px; */
+    table-layout: fixed;
+    /* min-width: 796px; */
+    overflow-x: auto;
+}
+
+.tb thead {
+    background-color: #003DA5;
+    color: #ffff;
+}
+
+.tb tbody tr:nth-child(odd) {
+    background-color: #ffff;
+}
+
+.tb tbody tr:nth-child(even) {
+    background-color: #D1DDF5;
+}
+
+.tb thead,
+.tb tbody tr {
+    height: 62px;
+}
+
+.tb thead th,
+.tb tbody tr td {
+    height: 62px;
+    padding: 8px 12px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tb tbody tr td img{
+    /* max-width: 100%; */
+    max-height: 100%;
+}
+
+.tb thead{
+    position: sticky;/* pega la cabecera al borde superior */
+    top: 0;
+}
+
+.tb-scroll-x {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tb-scroll-y {
+    height: 100%;
+    max-height: 806px;
+    overflow-y: auto;
+    margin: 50px 0 0 0;
+}
+
+/* .tb .td-acciones {
+    text-align: center;
+    width: 200px;
+} */
+
+
+
+/** Modal Usuarios **/
+
+.modal {
+    position: fixed;
+    /*Saca del flujo y lo pega relativamente a la pantalla, no se cuelga al padre ojo*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+    /*Hace que el modal se posicione por encima de todo*/
+
+    overflow: auto;
+}
+
+.modal-contenido-usuarios {
+    margin: auto;
+    position: relative;
+    background-color: #ffff;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+
+}
+
+.modal-cabecera {
+    height: 60px;
+    background-color: #003DA5;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 15px 20px;
+
+    color: #ffff;
+
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-cuerpo {
+    padding: 20px;
+}
+
+.btn-modal-cerrar {
+    margin-left: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-editar i,
+.btn-enviar-correo i {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.btn-eliminar i {
+    color: #dc3545;
+    cursor: pointer;
+}
+
+.oculto {
+    display: none;
+}
+
+/** Formulario **/
+
+.form{
+    width: 100%;
+}
+
+.form-grupo {
+    flex-direction: column;
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.form-grupo label {
+    width: 100%;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.form-grupo input,
+.form-grupo textarea,
+.cbo{
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+
+    /* font-size: 1em; */
+}
+
+.form-fila {
+    flex-direction: row;
+    width: 100%;
+    margin: 0 0 10px 0;
+    gap: 20px;
+}
+
+.form-fila .form-grupo {
+    margin-bottom: 0;
+}
+
+.img-height{
+    height: 79px;
+    width: 79px;
+    margin: auto;
+    max-height: 100%;
+}
+
+.modal-btn {
+    justify-content: center;
+    margin: 40px 0 0 0;
+}
+
+.btn-form-guardar {
+    background-color: #003DA5;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 10px 20px;
+
+    font-weight: 600;
+}
+
+/* Productos */
+
+.btn-agregar-producto {
+    padding: 5px 10px;
+    background-color: #09DDCC;
+    border-radius: 30px;
+    color: #fff;
+
+    margin: 0 20px 0 0;
+    min-width: 185px;
+}
+
+.modal-contenido-productos {
+    margin: auto;
+    position: relative;
+    background-color: #ffff;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+}
+
+.cont-img{
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.seleccionada {
+  background-color: red; /* azul claro */
+}
+
+/* Mensajes de Contacto*/
+.modal-contenido-contactos {
+    margin: auto;
+    position: relative;
+    background-color: #ffff;
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 20px;
+}
+
+.enviando{
+    background-color: #A0A7B8;
+    color: #e0e0e0;
+    border-radius: 5px;
+    padding: 10px 20px;
+
+    cursor: not-allowed;
+
+    font-weight: 600;
+}
+
+@media (max-widht: 1024px) {
+    .tb {
+        min-width: 0px;
+    }
+}
